@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>髮染日式快樂店｜商品訂購</title>
+<title>髮染日式快染店｜商品訂購</title>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('pfj61YZI1563kZ6rm');</script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Shippori+Mincho:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -374,7 +374,7 @@
 <body>
 
 <header>
-  <div class="shop-name">髮染日式快樂店</div>
+  <div class="shop-name">髮染日式快染店</div>
   <div class="shop-sub">Product Order Form</div>
   <div class="shop-divider">
     <span></span>
@@ -443,33 +443,183 @@
 
 <script>
 const products = [
-  { cat: "蘊髮露系列 2000ml", name: "淨化蘊髮露（控油）2000ml", price: 500 },
-  { name: "青春蘊髮露（養髮）2000ml", price: 500 },
-  { name: "平衡蘊髮露（汗濕）2000ml", price: 500 },
-  { cat: "蘊髮露系列 500ml", name: "青春蘊髮露（養髮）N [500ml]", price: 360 },
-  { name: "平衡蘊髮露（汗濕）N [500ml]", price: 360 },
-  { name: "淨化蘊髮露（控油）N [500ml]", price: 360 },
-  { name: "鈮活蘊髮露（敏弱）N [500ml]", price: null },
-  { cat: "蘊洛雙氧乳系列", name: "蘊洛雙氧乳1000ml-3%", price: 100 },
-  { name: "蘊洛雙氧乳1000ml-6%", price: 100 },
-  { name: "蘊洛雙氧乳1000ml-9%", price: 100 },
-  { cat: "精華 & 護理", name: "激活蘊萃精華 N [100ml]", price: 360 },
-  { name: "濃密蘊萃精華 N [100ml]", price: 360 },
-  { name: "水生漢澤精華油N", price: 225 },
-  { name: "極萃修護素 500ml", price: 360 },
-  { name: "極萃修護素 2000ml", price: 500 },
-  { name: "蘊萃組合", price: 720 },
-  { cat: "逆時系列", name: "逆時豐潤散泥 500ml", price: 450 },
-  { name: "逆時光蘊全效敷膜500ml", price: 450 },
-  { name: "琉光蘊結構護第二劑 500ml", price: 900 },
-  { cat: "染髮專區", name: "迷霧藝術家染膏Be-13", price: 80 },
-  { name: "迷霧藝術家染膏Na-13", price: 80 },
-  { name: "Na-5", price: 110 },
-  { name: "N彩染補色劑-太空冷灰 300ml", price: 175 },
-  { name: "彩染補色劑-迷霧灰紫300ml", price: 175 },
-  { cat: "沐浴 & 其他", name: "滋養柔膚沐浴露500ml", price: null },
-  { name: "蘊洛紙袋", price: null },
-  { name: "2026新年提袋", price: null },
+  // 水生系列
+  { cat: "水生系列", name: "水生洗髮精 2000ml", price: 1200 },
+  { name: "水生洗髮精 700ml", price: 600 },
+  { name: "水生護髮素 2000ml", price: 1200 },
+  { name: "水生護髮素 700ml", price: 600 },
+  { name: "水生旅行組 50ml×2包/盒", price: 140 },
+  { name: "水生頭皮水 平衡（控油）100ml", price: 360 },
+  { name: "水生頭皮水 甦活（敏弱）100ml", price: 360 },
+  { name: "水生漾澤精華油 100ml", price: 360 },
+  { name: "水生波漾捲捲乳 120ml", price: 350 },
+  { name: "水生瞬效水光髮膜 50ml×10包/盒", price: 1440 },
+  { name: "水生深層修護髮膜 500ml", price: 640 },
+  { name: "水漾滋養精華乳 100ml", price: 400 },
+  // 蘊萃系列
+  { cat: "蘊萃系列", name: "蘊髮露（青春）2000ml", price: 1200 },
+  { name: "蘊髮露（甦活）2000ml", price: 1200 },
+  { name: "蘊髮露（平衡）2000ml", price: 1200 },
+  { name: "蘊髮露（淨化）2000ml", price: 1200 },
+  { name: "蘊髮露（青春）500ml", price: 480 },
+  { name: "蘊髮露（甦活）500ml", price: 480 },
+  { name: "蘊髮露（平衡）500ml", price: 480 },
+  { name: "蘊髮露（淨化）500ml", price: 480 },
+  { name: "極萃修護素 2000ml", price: 1200 },
+  { name: "極萃修護素 500ml", price: 480 },
+  { name: "激活蘊萃精華 100ml", price: 480 },
+  { name: "濃密蘊萃精華 100ml", price: 480 },
+  // 逆時系列
+  { cat: "逆時系列", name: "逆時豐潤散泥 500ml", price: 560 },
+  { name: "逆時光蘊全效敷膜 500ml", price: 560 },
+  { name: "平衡淨透頭皮凝膠 20ml×12支/盒", price: 1152 },
+  { name: "蘊萃旅行盒（蘊髮露50ml+頭皮水50ml）", price: 180 },
+  // 沉淨系列
+  { cat: "沉淨系列", name: "洗髮露（油感）2000ml", price: 1200 },
+  { name: "洗髮露（敏感）2000ml", price: 1200 },
+  { name: "洗髮露（亮澤）2000ml", price: 1200 },
+  { name: "沉淨柔潤護髮素 2000ml", price: 1200 },
+  { name: "沉淨柔潤護髮素 500ml", price: 480 },
+  { name: "沉淨賦活頭皮噴霧 100ml", price: 480 },
+  { name: "沉淨旅行組 50ml×2包/盒", price: 140 },
+  // 彩染系列
+  { cat: "彩染系列", name: "增色彩染補色劑 粉紅/淨白 750ml", price: 640 },
+  { name: "增色彩染補色劑 冷灰/灰紫/粉紅/霧藍/奶茶/矯黃/亮紫/摩卡/粉紫/柑橘/杏紅/淨白 300ml", price: 280 },
+  { name: "增色彩染補色劑 冷灰/灰紫/粉紅/霧藍/奶茶/矯黃/亮紫/摩卡/粉紫/柑橘/杏紅/淨白 40ml", price: 76 },
+  // 琉光蘊結構護
+  { cat: "琉光蘊結構護", name: "琉光蘊第一劑 500ml", price: 1200 },
+  { name: "琉光蘊第二劑 500ml", price: 1200 },
+  { name: "琉光蘊第三劑 500ml", price: 1200 },
+  { name: "琉光蘊第四劑（輕）500ml", price: 1200 },
+  { name: "琉光蘊第四劑（重）500ml", price: 1200 },
+  { name: "琉光蘊結構重建護髮 50ml×4入/盒", price: 640 },
+  { name: "免沖抗熱修護精華盒 50ml", price: 240 },
+  // 藥水系列
+  { cat: "藥水系列", name: "TG水光熱塑一劑 健康/抗拒/抗拒+/受損/plus 500ml", price: 320 },
+  { name: "TG水光熱塑二劑 水/膏/溴酸鈉水狀 1000ml", price: 480 },
+  { name: "CA造型一劑 受損/極度受損/plus 500ml", price: 320 },
+  { name: "韓塑順貼燙 500ml", price: 320 },
+  { name: "PPT/CMC保養液 500ml", price: 720 },
+  { name: "鏈鍵蛋白素 500ml", price: 640 },
+  { name: "去鹼劑 ph中間酸 500ml", price: 560 },
+  { name: "柔潤3D冷燙第一劑 抗拒/健康 500ml", price: 320 },
+  { name: "柔潤3D冷燙第二劑 溴酸鈉水狀 500ml", price: 200 },
+  // 專業洗
+  { cat: "專業洗", name: "專業洗髮精 去鹼/淨化 2000ml", price: 1200 },
+  // 迷霧藝術家
+  { cat: "迷霧藝術家", name: "雙氧 3%/6%/9%/12% 1000ml", price: 240 },
+  { name: "漂色脫色粉 紫色漂粉/綠色極致去 500g", price: 720 },
+  { name: "染髮前頭皮隔離 100ml", price: 224 },
+  // 染膏 Na系列
+  { cat: "染膏 — Na系列", name: "Na1", price: 160 },
+  { name: "Na3", price: 160 },
+  { name: "Na5", price: 160 },
+  { name: "Na7", price: 160 },
+  { name: "Na9", price: 160 },
+  { name: "Na11", price: 160 },
+  // 染膏 As系列
+  { cat: "染膏 — As系列", name: "As5", price: 160 },
+  { name: "As7", price: 160 },
+  { name: "As9", price: 160 },
+  { name: "As11", price: 160 },
+  // 染膏 Aa系列
+  { cat: "染膏 — Aa系列", name: "Aa4", price: 160 },
+  { name: "Aa9", price: 160 },
+  { name: "Aa11", price: 160 },
+  // 染膏 ABN系列
+  { cat: "染膏 — ABN系列", name: "ABN9", price: 160 },
+  { name: "ABN11", price: 160 },
+  { name: "ABN13", price: 160 },
+  // 染膏 Be系列
+  { cat: "染膏 — Be系列", name: "Be5", price: 160 },
+  { name: "Be7", price: 160 },
+  { name: "Be9", price: 160 },
+  { name: "Be11", price: 160 },
+  { name: "Be13", price: 160 },
+  // 染膏 WBN系列
+  { cat: "染膏 — WBN系列", name: "WBN5", price: 160 },
+  { name: "WBN7", price: 160 },
+  { name: "WBN9", price: 160 },
+  { name: "WBN11", price: 160 },
+  // 染膏 CBN系列
+  { cat: "染膏 — CBN系列", name: "CBN5", price: 160 },
+  { name: "CBN7", price: 160 },
+  // 染膏 SG系列
+  { cat: "染膏 — SG系列", name: "SG7", price: 160 },
+  { name: "SG9", price: 160 },
+  { name: "SG11", price: 160 },
+  // 染膏 Mi系列
+  { cat: "染膏 — Mi系列", name: "Mi7", price: 160 },
+  { name: "Mi9", price: 160 },
+  { name: "Mi11", price: 160 },
+  // 染膏 Mo系列
+  { cat: "染膏 — Mo系列", name: "Mo5", price: 160 },
+  { name: "Mo7", price: 160 },
+  { name: "Mo9", price: 160 },
+  { name: "Mo11", price: 160 },
+  { name: "Mo13", price: 160 },
+  // 染膏 SCC系列
+  { cat: "染膏 — SCC系列", name: "SCC7", price: 160 },
+  { name: "SCC11", price: 160 },
+  // 染膏 PR系列
+  { cat: "染膏 — PR系列", name: "PR7", price: 160 },
+  { name: "PR9", price: 160 },
+  { name: "PR11", price: 160 },
+  { name: "PR13", price: 160 },
+  // 染膏 SR系列
+  { cat: "染膏 — SR系列", name: "SR7", price: 160 },
+  { name: "SR9", price: 160 },
+  // 染膏 MV系列
+  { cat: "染膏 — MV系列", name: "MV7", price: 160 },
+  { name: "MV9", price: 160 },
+  { name: "MV11", price: 160 },
+  // 染膏 BV系列
+  { cat: "染膏 — BV系列", name: "BV5", price: 160 },
+  { name: "BV7", price: 160 },
+  { name: "BV9", price: 160 },
+  { name: "BV11", price: 160 },
+  { name: "BV13", price: 160 },
+  // 染膏 FB系列
+  { cat: "染膏 — FB系列", name: "FB5", price: 160 },
+  { name: "FB7", price: 160 },
+  { name: "FB9", price: 160 },
+  { name: "FB11", price: 160 },
+  { name: "FB13", price: 160 },
+  // 染膏 SB系列
+  { cat: "染膏 — SB系列", name: "SB2", price: 160 },
+  { name: "SB6", price: 160 },
+  // 染膏 MG系列
+  { cat: "染膏 — MG系列", name: "MG7", price: 160 },
+  { name: "MG9", price: 160 },
+  { name: "MG11", price: 160 },
+  // 染膏 CGB系列
+  { cat: "染膏 — CGB系列", name: "CGB4", price: 160 },
+  { name: "CGB6", price: 160 },
+  // 染膏 WGB系列
+  { cat: "染膏 — WGB系列", name: "WGB4", price: 160 },
+  { name: "WGB6", price: 160 },
+  // 染膏 RGB系列
+  { cat: "染膏 — RGB系列", name: "RGB4", price: 160 },
+  { name: "RGB6", price: 160 },
+  // 染膏 VGB系列
+  { cat: "染膏 — VGB系列", name: "VGB4", price: 160 },
+  { name: "VGB6", price: 160 },
+  // 染膏 OGB系列
+  { cat: "染膏 — OGB系列", name: "OGB4", price: 160 },
+  { name: "OGB6", price: 160 },
+  // 染膏 特殊色系列
+  { cat: "染膏 — 特殊色系列", name: "Ash Black", price: 160 },
+  { name: "Ash", price: 160 },
+  { name: "Green", price: 160 },
+  { name: "Violet", price: 160 },
+  { name: "Red", price: 160 },
+  { name: "Blue", price: 160 },
+  { name: "Orange", price: 160 },
+  { name: "Yellow", price: 160 },
+  { name: "CL", price: 160 },
+  { name: "LT", price: 160 },
+  { name: "LVT", price: 160 },
+  { name: "LAT", price: 160 },
 ];
 
 const quantities = {};
